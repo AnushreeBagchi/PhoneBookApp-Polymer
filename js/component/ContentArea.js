@@ -1,8 +1,5 @@
 import {LitElement, html, css} from 'https://unpkg.com/lit-element/lit-element.js?module';
-import SideMenu from '/js/component/SideMenu.js'
-import ContentArea from '/js/component/ContentArea.js'
-import ContactsList from '/js/component/ContactsList.js'
-class CounterComp extends LitElement {
+export default class ContentArea extends LitElement {
     constructor(){
         super();
         
@@ -30,15 +27,15 @@ class CounterComp extends LitElement {
             
 
         </style>
-        <div class="main-page">
-            <side-menu></side-menu>
-            <content-area></content-area>
-        
-    </div>
+       
+        <section id="content-area">
+        <contacts-list><contacts-list>
+    </section>
+      
 
         `
 
     }
 }
            
-customElements.define('counter-comp',CounterComp);
+customElements.define('content-area',ContentArea);
