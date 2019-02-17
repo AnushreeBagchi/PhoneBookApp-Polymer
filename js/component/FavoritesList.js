@@ -24,11 +24,12 @@ export default class FavoritesList extends LitElement {
         
         return html`
         <style>
+        @import 'css/global.css';
             .favorites{
                 max-width: 800px;
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr ;
-                display: flex;
+                grid-gap: 1em;
 
             }
             h2{
@@ -51,11 +52,6 @@ export default class FavoritesList extends LitElement {
                 box-shadow: 4px 4px 36px 2px rgba(0,0,0,0.14);
             }
 
-            // .card:hover{
-            //     -webkit-box-shadow: 4px 4px 36px 2px rgba(0,0,0,0.14);
-            //     -moz-box-shadow: 4px 4px 36px 2px rgba(0,0,0,0.14);
-            //     box-shadow: 4px 4px 36px 2px rgba(0,0,0,0.14);
-            // }
             .user-image{
                 background-image: url('https://randomuser.me/api/portraits/women/44.jpg');
                 height : 80px;

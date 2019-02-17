@@ -1,6 +1,9 @@
 import {LitElement, html, css} from 'https://unpkg.com/lit-element/lit-element.js?module';
 import ContactsList from '/js/component/ContactsList.js'
 import FavoritesList from '/js/component/FavoritesList.js'
+import FormPopup from '/js/component/FormPopup.js'
+
+
 export default class ContentArea extends LitElement {
     constructor(){
         super();
@@ -24,6 +27,7 @@ export default class ContentArea extends LitElement {
         
         return html`
         <style>
+            @import 'css/global.css';
             #content-area{
                 background: #fcfdff;
                 padding: 50px 80px;
@@ -32,6 +36,7 @@ export default class ContentArea extends LitElement {
         </style>
        
         <section id="content-area">
+        <form-popup></form-popup>
         <favorites-list></favorites-list>
         <contacts-list><contacts-list>
     </section>

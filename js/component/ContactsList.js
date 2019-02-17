@@ -24,6 +24,7 @@ export default class ContactsList extends LitElement {
         
         return html`
         <style>
+        @import 'css/global.css';
             .contacts{
                 max-width: 800px;
 

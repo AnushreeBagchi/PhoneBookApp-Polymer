@@ -19,6 +19,8 @@ export default class SideMenu extends LitElement {
         let self=this;
         return html`
         <style>
+        @import 'css/global.css';
+        
         #side-menu{
             
             background:#323759;
