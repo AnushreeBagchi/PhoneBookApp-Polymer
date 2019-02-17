@@ -1,4 +1,6 @@
 import {LitElement, html, css} from 'https://unpkg.com/lit-element/lit-element.js?module';
+import ContactsList from '/js/component/ContactsList.js'
+import FavoritesList from '/js/component/FavoritesList.js'
 export default class ContentArea extends LitElement {
     constructor(){
         super();
@@ -16,8 +18,6 @@ export default class ContentArea extends LitElement {
         
         
     }
-
-   
                                     
     render(){
         let self=this;
@@ -32,11 +32,12 @@ export default class ContentArea extends LitElement {
         </style>
        
         <section id="content-area">
+        <favorites-list></favorites-list>
         <contacts-list><contacts-list>
     </section>
       
 
-        `
+    `
 
     }
 }
