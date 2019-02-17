@@ -12,9 +12,7 @@ export default class FavoritesList extends LitElement {
     };
 
     firstUpdated() {
-        console.log('loaded');    
-        
-        
+      
     }
 
    

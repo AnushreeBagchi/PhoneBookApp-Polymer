@@ -14,8 +14,6 @@ export default class FormPopup extends LitElement {
     };
 
     firstUpdated() {
-        // console.log('loaded');    
-        
         
     }
                                     
@@ -36,7 +34,13 @@ export default class FormPopup extends LitElement {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                visibility: hidden;
+                transition: all .4s ease-in-out;
+                opacity:0;
+            }
 
+            .form-popup .active{
+                visibility:visible;
             }
 
             form{
@@ -47,6 +51,7 @@ export default class FormPopup extends LitElement {
                 grid-template-columns: 1fr 1fr 1fr 1fr;
                 grid-gap: 20px;
                 width: 400px;
+                position: relative;
             }
             h2{
                 font-size:1.2rem;
@@ -113,11 +118,29 @@ export default class FormPopup extends LitElement {
                 border-radius:5px;
             }
 
+            .closing-btn{
+                position: absolute;
+                right:0;
+                top:0;
+                padding: 1em;
+                cursor: pointer;
+
+            }
+            .closing-btn svg{
+                height: 1em;
+                width: 1em;
+                color  : #2576C0;
+            }
+
         </style>
        
         <section class="form-popup">
             <form>
+                <div class="closing-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"/></svg>
+                </div>
                 <h2>Add a new contact</h2>
+                
                 <div class="form-group firstname">   
                     <label for="firstname">First Name</label>
                     <input type="text" name="firstname">
@@ -152,18 +175,11 @@ export default class FormPopup extends LitElement {
                     <label for="zip">Zip Code</label>
                     <input type="text" name="zip">
                 </div>
-
                 <div class="form-group button ">   
                     <button type="submit" >Add</button>
                 </div>
-
-
-            </form>
-            
-            
-         
+            </form>       
     </section>
-
     `
 
     }

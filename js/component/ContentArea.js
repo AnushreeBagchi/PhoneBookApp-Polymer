@@ -12,14 +12,12 @@ export default class ContentArea extends LitElement {
 
     static get properties(){
         return {
-           
+           test: Boolean
         }
     };
 
     firstUpdated() {
-        console.log('loaded');    
-        
-        
+  
     }
                                     
     render(){
@@ -34,7 +32,7 @@ export default class ContentArea extends LitElement {
             }    
 
         </style>
-       
+        <div>${this.test}</div>
         <section id="content-area">
         <form-popup></form-popup>
         <favorites-list></favorites-list>

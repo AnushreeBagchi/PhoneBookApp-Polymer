@@ -2,18 +2,23 @@ import {LitElement, html, css} from 'https://unpkg.com/lit-element/lit-element.j
 export default class SideMenu extends LitElement {
     constructor(){
         super();
-        
+        // this.onClick = this.onClick.bind(this);
     }
-
+    
     static get properties(){
+        
         return {
            
+            addContactClick: Function,
+              
         }
     };
 
     firstUpdated() {
         console.log('loaded');       
     }
+    
+    
                                     
     render(){
         let self=this;
@@ -22,7 +27,6 @@ export default class SideMenu extends LitElement {
         @import 'css/global.css';
         
         #side-menu{
-            
             background:#323759;
             height: 100vh;
             padding: 25px 25px;
@@ -55,7 +59,7 @@ export default class SideMenu extends LitElement {
         }
  
         </style>
-       
+        
         <section id="side-menu">
             <div class="logo">
                 <img src="http://transformations-spafitness.com/wp-content/uploads/2013/11/google-logo-icon-PNG-Transparent-Background-1.png">
@@ -63,7 +67,8 @@ export default class SideMenu extends LitElement {
             <div class="menu">
                 <div class="title">Contacts</div>
                 <nav>
-                    <a href="#"><span class='icon'>+</span>Add Contacts</a>
+                
+                    <a href="#"  @click="${this.onClick}"><span class='icon'>-</span>Add Contacts</a>
                     <a href="#"><span class='icon'>+</span>Add Contacts</a>
                     <a href="#"><span class='icon'>+</span>Add Contacts</a>
                     <a href="#"><span class='icon'>+</span>Add Contacts</a>

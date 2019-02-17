@@ -5,26 +5,29 @@ import ContactsList from '/js/component/ContactsList.js'
 class CounterComp extends LitElement {
     constructor(){
         super();
-        
+       
+        this.addContactClick=this.addContactClick.bind(this);
+        this.test=false;
     }
 
     static get properties(){
         return {
-           
+            addContactClick: Function,
         }
     };
 
     firstUpdated() {
-        console.log('loaded');    
-        
-        
+       
     }
 
-   
-                                    
+    addContactClick(){
+        debugger;
+        console.log("add button clicked");
+    }
+                             
     render(){
         let self=this;
-        
+
         return html`
         <style>
         @import 'css/global.css';
@@ -35,8 +38,8 @@ class CounterComp extends LitElement {
 
         </style>
         <div class="main-page">
-            <side-menu></side-menu>
-            <content-area></content-area>
+            <side-menu addContactClick="${this.addContactClick}"></side-menu>
+            <content-area test="${this.test}"></content-area>
         
     </div>
 

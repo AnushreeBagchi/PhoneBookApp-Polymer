@@ -1,8 +1,7 @@
 import {LitElement, html, css} from 'https://unpkg.com/lit-element/lit-element.js?module';
 export default class ContactsList extends LitElement {
     constructor(){
-        super();
-        
+        super();        
     }
 
     static get properties(){
@@ -12,13 +11,8 @@ export default class ContactsList extends LitElement {
     };
 
     firstUpdated() {
-        console.log('loaded');    
-        
-        
-    }
 
-   
-                                    
+    }                                 
     render(){
         let self=this;
         
@@ -56,19 +50,16 @@ export default class ContactsList extends LitElement {
                 width: 40px;
                 background-size: cover;
                 background-position: center;
-                border-radius: 10px;
-                
+                border-radius: 10px;                
             }
 
-            .contact .fullname{
-                
+            .contact .fullname{                
                 font-weight: 700;
                 text-tranform: capitalize;
             }
 
             .contact .number{
                 font-weight: 500;
-
             }
 
             .text{
@@ -136,7 +127,6 @@ export default class ContactsList extends LitElement {
             </div>
         </section>
         `
-
     }
 }
            
