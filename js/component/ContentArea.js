@@ -35,6 +35,7 @@ export default class ContentArea extends LitElement {
         </style>
        
         <section id="content-area">
+        
             <favorites-list></favorites-list>
             <contacts-list><contacts-list>
         </section>

@@ -11,7 +11,8 @@ export default class SideMenu extends LitElement {
         return {
             addContactClick:  Function ,
             popupOpen: Boolean,
-            allContact:Array
+            allContacts: {type:Array
+                        }
         }
     };
 
@@ -29,11 +30,13 @@ export default class SideMenu extends LitElement {
     addFormElement(){
         var formElement=  document.createElement('form-popup');
         this.shadowRoot.append(formElement);
-        // this.setAttribute('saveContact','');
+        formElement.setAttribute("allContacts",`${JSON.stringify(this.allContacts)}`);
+        
     }
                             
     render(){
         let self=this;
+   
         return html`
         <style>
         @import 'css/global.css';

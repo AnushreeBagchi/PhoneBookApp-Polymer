@@ -9,13 +9,14 @@ export default class FormPopup extends LitElement {
         super();
         this.formData={};
         this.change=this.change.bind(this);
+        
     }
 
     static get properties(){
-
         return {
             popupOpen: Boolean,
-            formData:Object
+            formData:Object,
+            allContacts: {type: Array}
         }
     };
 
@@ -35,7 +36,12 @@ export default class FormPopup extends LitElement {
         formData[name]=value;
         this.formData=Object.assign(this.formData,formData);
         console.log(this.formData);
-    
+    }
+
+    addContact(event){
+        this.allContacts.push(this.formData);
+        console.log(this.allContacts);
+        event.preventDefault();
     }
                                     
     render(){
@@ -90,7 +96,7 @@ export default class FormPopup extends LitElement {
                     <input type="text" name="zip"  @keyup="${this.change}">
                 </div>
                 <div class="form-group button ">   
-                    <button type="submit" >Add</button>
+                    <button  @click="${this.addContact}">Add</button>
                 </div>
             </form>       
     </section>`
