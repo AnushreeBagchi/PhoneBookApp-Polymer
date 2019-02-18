@@ -5,14 +5,14 @@ import ContactsList from '/js/component/ContactsList.js'
 class CounterComp extends LitElement {
     constructor(){
         super();
-       
+      
         this.addContactClick=this.addContactClick.bind(this);
-        this.test=false;
+        this.popupOpen=false;
     }
 
     static get properties(){
         return {
-            addContactClick: Function,
+            addContactClick: Function
         }
     };
 
@@ -20,9 +20,9 @@ class CounterComp extends LitElement {
        
     }
 
-    addContactClick(){
-        debugger;
-        console.log("add button clicked");
+    addContactClick() {
+        alert("add button clicked");
+        return true;
     }
                              
     render(){
@@ -38,8 +38,8 @@ class CounterComp extends LitElement {
 
         </style>
         <div class="main-page">
-            <side-menu addContactClick="${this.addContactClick}"></side-menu>
-            <content-area test="${this.test}"></content-area>
+             <side-menu popupOpen="${this.popupOpen}"></side-menu>
+            <content-area popupOpen="${this.popupOpen}" ></content-area>
         
     </div>
 

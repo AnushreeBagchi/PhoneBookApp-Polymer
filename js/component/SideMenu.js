@@ -1,25 +1,36 @@
 import {LitElement, html, css} from 'https://unpkg.com/lit-element/lit-element.js?module';
+import FormPopup from '/js/component/FormPopup.js'
 export default class SideMenu extends LitElement {
     constructor(){
         super();
         // this.onClick = this.onClick.bind(this);
+        
+        
     }
     
     static get properties(){
-        
         return {
-           
-            addContactClick: Function,
-              
+            addContactClick:  Function ,
+            popupOpen: Boolean
         }
     };
 
     firstUpdated() {
         console.log('loaded');       
     }
-    
-    
-                                    
+
+    addContactClick() {
+        console.log("add button clicked");
+        // this.popupOpen=true;
+        this.addFormElement();
+
+    }
+
+    addFormElement(){
+        var formElement=  document.createElement('form-popup');
+        this.shadowRoot.append(formElement)
+    }
+                            
     render(){
         let self=this;
         return html`
@@ -57,6 +68,11 @@ export default class SideMenu extends LitElement {
         .logo img{
             width:  50px;
         }
+
+        .hide{
+            display: none;
+            
+        }
  
         </style>
         
@@ -68,7 +84,7 @@ export default class SideMenu extends LitElement {
                 <div class="title">Contacts</div>
                 <nav>
                 
-                    <a href="#"  @click="${this.onClick}"><span class='icon'>-</span>Add Contacts</a>
+                    <a href="#" @click="${this.addContactClick}"><span class='icon'>-</span>Add Contacts</a>
                     <a href="#"><span class='icon'>+</span>Add Contacts</a>
                     <a href="#"><span class='icon'>+</span>Add Contacts</a>
                     <a href="#"><span class='icon'>+</span>Add Contacts</a>

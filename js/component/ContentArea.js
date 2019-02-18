@@ -7,12 +7,13 @@ import FormPopup from '/js/component/FormPopup.js'
 export default class ContentArea extends LitElement {
     constructor(){
         super();
-        
+        // console.log("Content Area:"+this.popupOpen);
     }
 
     static get properties(){
+        
         return {
-           test: Boolean
+            popupOpen: Boolean
         }
     };
 
@@ -32,14 +33,11 @@ export default class ContentArea extends LitElement {
             }    
 
         </style>
-        <div>${this.test}</div>
+       
         <section id="content-area">
-        <form-popup></form-popup>
-        <favorites-list></favorites-list>
-        <contacts-list><contacts-list>
-    </section>
-      
-
+            <favorites-list></favorites-list>
+            <contacts-list><contacts-list>
+        </section>
     `
 
     }
