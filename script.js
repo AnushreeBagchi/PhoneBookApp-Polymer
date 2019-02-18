@@ -7,12 +7,17 @@ class CounterComp extends LitElement {
         super();
       
         this.addContactClick=this.addContactClick.bind(this);
-        this.popupOpen=false;
+        this.saveContact=this.saveContact.bind(this);
+        this.allContacts=['Anu']
+        
+
     }
 
     static get properties(){
         return {
-            addContactClick: Function
+            addContactClick: Function,
+            allContacts: Array
+            
         }
     };
 
@@ -23,6 +28,10 @@ class CounterComp extends LitElement {
     addContactClick() {
         alert("add button clicked");
         return true;
+    }
+
+    saveContact(contact){
+
     }
                              
     render(){
@@ -38,7 +47,7 @@ class CounterComp extends LitElement {
 
         </style>
         <div class="main-page">
-             <side-menu popupOpen="${this.popupOpen}"></side-menu>
+            <side-menu popupOpen="${this.popupOpen}"  allContact="${this.allContact}"></side-menu>
             <content-area popupOpen="${this.popupOpen}" ></content-area>
         
     </div>

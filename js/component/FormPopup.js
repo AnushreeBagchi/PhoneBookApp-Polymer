@@ -7,12 +7,15 @@ import ContentArea  from '/js/component/ContentArea.js'
 export default class FormPopup extends LitElement {
     constructor(){
         super();
+        this.formData={};
+        this.change=this.change.bind(this);
     }
 
     static get properties(){
 
         return {
-            popupOpen: Boolean
+            popupOpen: Boolean,
+            formData:Object
         }
     };
 
@@ -21,9 +24,18 @@ export default class FormPopup extends LitElement {
     }
 
     toggleDisplay(){
-        console.log("Close btn");
         this.classList.add('hide')
-        debugger;
+       
+    }
+
+    change(event){
+        let formData={};
+        let name=event.target.name;
+        let value= (event.target.type==='checkbox')? event.target.checked : event.target.value
+        formData[name]=value;
+        this.formData=Object.assign(this.formData,formData);
+        console.log(this.formData);
+    
     }
                                     
     render(){
@@ -45,37 +57,37 @@ export default class FormPopup extends LitElement {
                 
                 <div class="form-group firstname">   
                     <label for="firstname">First Name</label>
-                    <input type="text" name="firstname">
+                    <input type="text" name="firstname" @keyup="${this.change}">
                 </div>
 
                 <div class="form-group lastname">   
                     <label for="lastname">Last Name</label>
-                    <input type="text" name="lastname">
+                    <input type="text" name="lastname"  @keyup="${this.change}">
                 </div>
 
                 <div class="form-group address_1">   
                     <label for="address_1">Address #1</label>
-                    <input type="text" name="address_1">
+                    <input type="text" name="address_1"  @keyup="${this.change}">
                 </div>
 
                 <div class="form-group address_2">   
                     <label for="address_2">Address #2</label>
-                    <input type="text" name="address_2">
+                    <input type="text" name="address_2"  @keyup="${this.change}">
                 </div>
 
                 <div class="form-group city">   
                     <label for="city">City</label>
-                    <input type="text" name="city">
+                    <input type="text" name="city"  @keyup="${this.change}">
                 </div>
 
                 <div class="form-group state">   
                     <label for="state">State</label>
-                    <input type="text" name="state">
+                    <input type="text" name="state"  @keyup="${this.change}">
                 </div>
 
                 <div class="form-group zip">   
                     <label for="zip">Zip Code</label>
-                    <input type="text" name="zip">
+                    <input type="text" name="zip"  @keyup="${this.change}">
                 </div>
                 <div class="form-group button ">   
                     <button type="submit" >Add</button>

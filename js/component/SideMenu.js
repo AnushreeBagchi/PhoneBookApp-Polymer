@@ -5,18 +5,18 @@ export default class SideMenu extends LitElement {
         super();
         // this.onClick = this.onClick.bind(this);
         
-        
     }
     
     static get properties(){
         return {
             addContactClick:  Function ,
-            popupOpen: Boolean
+            popupOpen: Boolean,
+            allContact:Array
         }
     };
 
     firstUpdated() {
-        console.log('loaded');       
+          
     }
 
     addContactClick() {
@@ -28,7 +28,8 @@ export default class SideMenu extends LitElement {
 
     addFormElement(){
         var formElement=  document.createElement('form-popup');
-        this.shadowRoot.append(formElement)
+        this.shadowRoot.append(formElement);
+        // this.setAttribute('saveContact','');
     }
                             
     render(){
@@ -71,7 +72,8 @@ export default class SideMenu extends LitElement {
 
         .hide{
             display: none;
-            
+           
+
         }
  
         </style>
